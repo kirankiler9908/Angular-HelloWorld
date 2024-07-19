@@ -19,6 +19,8 @@ RUN npm run build --prod
 # Step 2: Serve the Angular application using Nginx
 FROM nginx:alpine
 
+RUN  sh 'ls -la /app/dist';
+
 # Copy the built Angular files from the previous stage
 COPY --from=build /app/dist/angular-hello-world /usr/share/nginx/html
 
