@@ -22,8 +22,6 @@ FROM nginx:alpine
 # Copy the built Angular files from the previous stage
 COPY --from=build /app/dist/angular-hello-world /usr/share/nginx/html
 
-# Copy the custom Nginx configuration file
-//COPY nginx.conf /etc/nginx/nginx.conf
 
 # Expose port 80
 EXPOSE 80
